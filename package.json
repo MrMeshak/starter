@@ -5,9 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "rsync:graphql": "rsync -r --include '*/' --include '*.graphql' --exclude='*' --prune-empty-dirs 'src/' 'dist/'",
-    "build": "rimraf dist && swc ./src -d dist && npm run rsync:graphql",
-    "start": "node dist/server.js"
+    "copy:graphql" : "copyfiles --flat src/graphql/*.graphql dist/graphql",
+    "build": "rimraf dist && swc ./src -d dist && npm run copy:graphql",
+    "start": "node dist/server.js",
+    "start:docker" : "npm run build && npm run start"
   },
   "author": "",
   "license": "ISC",

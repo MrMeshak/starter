@@ -1,7 +1,7 @@
 export const rootResolvers = {
   Query: {
     message: () => {
-      return 'Hello World';
+      return 'Hello Meshak!!!';
     },
   },
 };
