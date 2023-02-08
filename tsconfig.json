@@ -5,7 +5,7 @@
       "ESNext"
     ],
     "outDir": "dist",
-    "paths": {}
+    "paths": {},
   },
   "include": [
     "src"
