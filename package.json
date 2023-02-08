@@ -5,10 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "copy:graphql" : "copyfiles --flat src/graphql/*.graphql dist/graphql",
     "build": "rimraf dist && swc ./src -d dist && npm run copy:graphql",
     "start": "node dist/server.js",
-    "start:docker" : "npm run build && node --inspect=0.0.0.0 dist/server.js"
+    "start:docker" : "npm run build && node --inspect=0.0.0.0 dist/server.js",
+    "db:console": "docker compose exec postgres psql -h localhost -U postgres -d webapp_dev",
+    "copy:graphql" : "copyfiles --flat src/graphql/*.graphql dist/graphql"
   },
   "author": "",
   "license": "ISC",
